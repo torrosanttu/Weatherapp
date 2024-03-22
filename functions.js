@@ -12,6 +12,7 @@ const getLocation = () => {
         navigator.geolocation.getCurrentPosition(position => {
             document.querySelector('#lat').innerHTML = position.coords.latitude.toFixed(3) + ', '
             document.querySelector('#lng').innerHTML = position.coords.longitude.toFixed(3)
+            getWeather(position.coords.latitude,position.coords.longitude)
         }),(error => {
             alert(error)
         })
